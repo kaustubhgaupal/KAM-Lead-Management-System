@@ -1,0 +1,33 @@
+<%- include('../partials/header', { title: 'Performance Tracking' }) %>
+
+<h2>Performance Tracking</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Performance Score</th>
+            <th>Call Frequency</th>
+            <th>Last Call</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (leads.length === 0) { %>
+            <tr>
+                <td colspan="5">No performance data available.</td>
+            </tr>
+        <% } else { %>
+            <% leads.forEach(lead => { %>
+                <tr>
+                    <td><%= lead.restaurantName %></td>
+                    <td><%= lead.address %></td>
+                    <td><%= lead.performanceScore %></td>
+                    <td><%= lead.callFrequency %> days</td>
+                    <td><%= lead.lastCall ? lead.lastCall.toLocaleDateString() : 'Never' %></td>
+                </tr>
+            <% }); %>
+        <% } %>
+    </tbody>
+</table>
+
+<%- include('../partials/footer') %>

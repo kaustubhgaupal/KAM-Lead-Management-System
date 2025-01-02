@@ -1,0 +1,38 @@
+<%- include('../partials/header', { title: 'Call Planning' }) %>
+
+<h2>Leads Requiring Calls Today</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Company</th>
+            <th>Last Call</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (leads.length === 0) { %>
+            <tr>
+                <td colspan="5">No leads require calls today.</td>
+            </tr>
+        <% } else { %>
+            <% leads.forEach(lead => { %>
+                <tr>
+                    <td><%= lead.restaurantName %></td>
+                    <td><%= lead.address %></td>
+                    <td><%= lead.performanceScore %></td>
+                    <td><%= lead.callFrequency %> days</td>
+                    <td><%= lead.lastCall ? lead.lastCall.toLocaleDateString() : 'Never' %></td>
+                    <td>
+                        <form action="/leads/call/<%= lead._id %>" method="POST">
+                            <button type="submit" class="btn btn-primary">Mark as Called</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        <% } %>
+    </tbody>
+</table>
+
+<%- include('../partials/footer') %>

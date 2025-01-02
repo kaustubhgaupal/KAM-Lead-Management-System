@@ -1,0 +1,38 @@
+<%- include('../partials/header', { title: 'Login' }) %>
+
+<h2>Leads</h2>
+
+<% if (leads.length === 0) { %>
+  <p>No leads available.</p>
+<% } else { %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">address</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% leads.forEach(lead => { %>
+        <tr>
+          <td><%= lead.restaurantName %></td>
+          <td><%= lead.address %></td>
+          <td><%= lead.phone %></td>
+          <td>
+            <a href="/leads/<%= lead._id %>" class="btn btn-info">View</a>
+            <a href="/leads/<%= lead._id %>/edit" class="btn btn-warning">Edit</a>
+            <form action="/leads/<%= lead._id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<a href="/leads/new" class="btn btn-primary">Create New Lead</a>
+
+<%- include('../partials/footer') %>

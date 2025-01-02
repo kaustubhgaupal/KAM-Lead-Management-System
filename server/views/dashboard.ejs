@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa; /* Light gray background for better contrast */
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      transition: transform 0.2s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-5px); /* Slight lift effect on hover */
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .card-text {
+      font-size: 0.9rem;
+      color: #6c757d; /* Secondary text color */
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      box-shadow: 0 4px 8px rgba(0, 91, 187, 0.2);
+    }
+    .container h1 {
+      font-weight: 700;
+      color: #343a40;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Lead Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-5">Welcome to Your Dashboard</h1>
+    <div class="row justify-content-center g-4">
+      <!-- Interactions Card -->
+      <div class="col-md-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Interactions</h5>
+            <p class="card-text">Track and manage all your interactions efficiently.</p>
+            <a href="/interactions" class="btn btn-primary">View Interactions</a>
+          </div>
+        </div>
+      </div>
+      <!-- Contacts Card -->
+      <div class="col-md-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Contacts</h5>
+            <p class="card-text">Organize and manage all your contact details in one place.</p>
+            <a href="/contacts" class="btn btn-primary">View Contacts</a>
+          </div>
+        </div>
+      </div>
+      <!-- Leads Card -->
+      <div class="col-md-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Leads</h5>
+            <p class="card-text">Stay updated and manage your leads effectively.</p>
+            <a href="/leads" class="btn btn-primary">View Leads</a>
+          </div>
+        </div>
+      </div>
+      <!-- Call Planning Card -->
+      <div class="col-md-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Call Planning</h5>
+            <p class="card-text">View and plan calls for leads that require attention.</p>
+            <a href="/leads/call" class="btn btn-primary">View Call Planning</a>
+          </div>
+        </div>
+      </div>
+      <!-- Performance Tracking Card -->
+      <div class="col-md-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Performance Tracking</h5>
+            <p class="card-text">Track the performance of your leads and interactions.</p>
+            <a href="/leads/performance" class="btn btn-primary">View Performance</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

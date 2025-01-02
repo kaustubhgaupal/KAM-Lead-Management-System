@@ -1,0 +1,41 @@
+<%- include('../partials/header', { title: 'Contacts' }) %>
+
+<h2>Contacts</h2>
+
+<% if (contacts.length === 0) { %>
+  <p>No contacts available.</p>
+<% } else { %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Lead</th>
+        <th scope="col">Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% contacts.forEach(contact => { %>
+        <tr>
+          <td><%= contact.lead.restaurantName %></td>
+          <td><%= contact.name %></td>
+          <td><%= contact.role %></td>
+          <td><%= contact.phone %></td>
+          <td><%= contact.email %></td>
+          <td>
+            <a href="/contacts/<%= contact._id %>" class="btn btn-info">View</a>
+            <a href="/contacts/<%= contact._id %>/edit" class="btn btn-warning">Edit</a>
+            <form action="/contacts/<%= contact._id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<a href="/contacts/new" class="btn btn-primary">Create New Contact</a>
+<%- include('../partials/footer') %>

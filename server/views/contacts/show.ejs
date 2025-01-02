@@ -1,0 +1,14 @@
+<%- include('../partials/header', { title: 'Login' }) %>
+
+<h2>Contact Details</h2>
+
+<div>
+  <p><strong>Lead RestaurantName :</strong> <%= contact.lead.restaurantName || 'N/A' %></p>
+        <p><strong>Name   :</strong><%=   contact.name %></p>
+        <p><strong>Role   :</strong><%=   contact.role %></p>
+        <p><strong>Phone  :</strong><%=   contact.phone %></p>
+</div>
+
+<a href="/contacts/<%= contact._id %>/edit" class="btn btn-warning">Edit</a>
+<a href="/Contacts" class="btn btn-secondary">Back to Contacts</a>
+<%- include('../partials/footer') %>

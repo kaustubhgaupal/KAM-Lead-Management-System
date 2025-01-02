@@ -1,0 +1,16 @@
+<%- include('../partials/header', { title: 'Lead Details' }) %>
+
+<h2>Lead Details</h2>
+
+<div>
+  <h3><%= lead.restaurantName %></h3>
+  
+  <p><strong>Address:</strong> <%= lead.address %></p>
+  <p><strong>Phone:</strong> <%= lead.phone %></p>
+  <p><strong>Status:</strong> <%= lead.status %></p>
+</div>
+
+<a href="/leads/<%= lead._id %>/edit" class="btn btn-warning">Edit</a>
+<a href="/leads" class="btn btn-secondary">Back to Leads</a>
+
+<%- include('../partials/footer') %>

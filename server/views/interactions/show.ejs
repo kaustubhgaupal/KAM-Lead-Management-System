@@ -1,0 +1,14 @@
+<%- include('../partials/header', { title: 'Login' }) %>
+
+<h2>Interaction Details</h2>
+
+<div>
+  <h3><%= interaction.type %> - <%= interaction.lead.restaurantName %></h3>
+  <p><strong>Date:</strong> <%= interaction.date %></p>
+  <p><strong>Description:</strong> <%= interaction.notes %></p>
+</div>
+
+<a href="/interactions/<%= interaction._id %>/edit" class="btn btn-warning">Edit</a>
+<a href="/interactions" class="btn btn-secondary">Back to Interactions</a>
+
+<%- include('../partials/footer') %>

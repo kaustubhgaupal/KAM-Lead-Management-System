@@ -1,0 +1,33 @@
+<%- include('../partials/header', { title: 'Login' }) %>
+
+<h2>Edit Interaction</h2>
+
+
+<form action="/interactions/<%= interaction._id %>?_method=PUT" method="POST">
+  <div class="mb-3">
+    <label for="lead" class="form-label">Lead</label>
+    <select class="form-select" id="lead" name="lead" required>
+      <option value="<%= interaction.lead._id %>" selected><%= interaction.lead.name %></option>
+      <% leads.forEach(lead => { %>
+        <option value="<%= lead._id %>"><%= lead.name %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="type" class="form-label">Interaction Type</label>
+    <input type="text" class="form-control" id="type" name="type" value="<%= interaction.type %>" required>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea class="form-control" id="description" name="description" required><%= interaction.description %></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="date" class="form-label">Date</label>
+    <input type="date" class="form-control" id="date" name="date" value="<%= interaction.date %>" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Update Interaction</button>
+</form>
+
+<a href="/interactions" class="btn btn-secondary">Back to Interactions</a>
+
+<%- include('../partials/footer') %>
