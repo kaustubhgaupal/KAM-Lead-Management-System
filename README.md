@@ -61,4 +61,4 @@ Finally, start the server by running:
 node index.js
 ```
 
-This will start the application, and it should be running on the default port ([http://localhost:3000](http://localhost:3000)).
+This will start the application, and it should be running on the default port ([http://localhost:3000](http://localhost:5000)).
