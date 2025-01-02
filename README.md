@@ -20,3 +20,35 @@ Start by cloning the repository to your local machine:
 
 ```bash
 git clone https://github.com/kaustubhgaupal/KAM-Lead-Management-System.git
+
+
+2. Navigate to the server Directory
+Once the repository is cloned, navigate to the server directory:
+
+bash
+Copy code
+cd KAM-Lead-Management-System/server
+3. Add MongoDB URI and Secret to .env
+In the server directory, you’ll find a .env file. Open it and add your MongoDB URI and Secret like below:
+
+env
+Copy code
+MONGODB_URI=your_mongodb_uri_here
+SECRET=your_secret_key_here
+Replace your_mongodb_uri_here with the URI of your MongoDB database.
+Replace your_secret_key_here with a secret key for your application (this is often used for JWT authentication).
+4. Install Dependencies
+Now, install the necessary dependencies using npm:
+
+bash
+Copy code
+npm install
+This will install all the required packages listed in the package.json file.
+
+5. Run the Project
+Finally, start the server by running:
+
+bash
+Copy code
+node index.js
+This will start the application, and it should be running on the default port (http://localhost:3000).
