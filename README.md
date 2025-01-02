@@ -3,6 +3,8 @@
 
 This is the KAM Lead Management System, designed to manage leads efficiently. Follow the steps below to set up and run the project locally.
 
+This is the KAM Lead Management System, designed to manage leads efficiently. The application is built using **Node.js**, **EJS**, **MongoDB**, and **Express**. It uses **JWT tokens** for authentication and authorization.
+
 ## Prerequisites
 
 Make sure you have the following installed on your machine:
